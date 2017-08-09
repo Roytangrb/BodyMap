@@ -41,10 +41,10 @@
                 var dBValueCount = $('#dBValue').val();
                 $('#dBoutput').html(dBValueCount.toString());
                 if (dBValueCount > 90) {
-                    $('#anatomy').mapster('set', deselected, head);
+                    $('#anatomy').mapster('set', false, head);
                     $('area.legs').mapster('set', false)
                 } else {
-                    $('#anatomy').mapster('set', selected, head);
+                    $('#anatomy').mapster('set', true, head);
                     $('area.legs').mapster('set', true);
                 }
             });
