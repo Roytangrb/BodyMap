@@ -35,9 +35,10 @@
         $('area.hands').mapster('set', false);
         $('area.legs').mapster('set', false);
 
-        var dBValueCount = $('#dBValue').val();
         $(function() {
             $('#dBValue').change(function() {
+                var dBValueCount = $('#dBValue').val();
+                $('#dBoutput').html(dBValueCount.toString());
                 if (dBValueCount > 90) {
                     $('#head').mapster('set', false);
                     $('img').mapster('highlight', false)
@@ -47,6 +48,5 @@
                 }
             });
         });
-        $('#dBoutput').html(dBValueCount.toString());
     </script>
 </body>
