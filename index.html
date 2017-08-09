@@ -39,9 +39,9 @@
             $('#dBValue').change(function() {
                 var dBValueCount = $('#dBValue').val();
                 if (dBValueCount > 90) {
-                    $('#head').mapster('set', false);
+
                 } else {
-                    $('#head').mapster('set', true);
+                    $('#anatomy').mapster('highlight', "head");
                 }
             });
         });
