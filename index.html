@@ -39,9 +39,11 @@
             $('#dBValue').change(function() {
                 var dBValueCount = $('#dBValue').val();
                 if (dBValueCount > 90) {
-
+                    $('#head').mapster('set', false);
+                    $('img').mapster('highlight', false)
                 } else {
                     $('#anatomy').mapster('highlight', "head");
+                    $('area.legs').mapster('set', true);
                 }
             });
         });
