@@ -43,25 +43,25 @@
                 $('#dBoutput').html(dBValueCount.toString());
                 if (dBValueCount > 160) {
                     $('area.legs').mapster('set', true);
-                    $('area.head').mapster('set', false);
-                    $('area.body').mapster('set', false);
-                    $('area.hands').mapster('set', false);
-                    $('area.under').mapster('set', false);
+                    $('area.head').mapster('set', true);
+                    $('area.body').mapster('set', true);
+                    $('area.hands').mapster('set', true);
+                    $('area.under').mapster('set', true);
                 } else if (dBValueCount > 130) {
                     $('area.under').mapster('set', true);
-                    $('area.head').mapster('set', false);
-                    $('area.body').mapster('set', false);
-                    $('area.hands').mapster('set', false);
+                    $('area.head').mapster('set', true);
+                    $('area.body').mapster('set', true);
+                    $('area.hands').mapster('set', true);
                     $('area.legs').mapster('set', false);
                 } else if (dBValueCount > 100) {
                     $('area.body').mapster('set', true);
-                    $('area.head').mapster('set', false);
-                    $('area.hands').mapster('set', false);
+                    $('area.head').mapster('set', true);
+                    $('area.hands').mapster('set', true);
                     $('area.under').mapster('set', false);
                     $('area.legs').mapster('set', false);
                 } else if (dBValueCount > 70) {
                     $('area.hands').mapster('set', true);
-                    $('area.head').mapster('set', false);
+                    $('area.head').mapster('set', true);
                     $('area.body').mapster('set', false);
                     $('area.under').mapster('set', false);
                     $('area.legs').mapster('set', false);
