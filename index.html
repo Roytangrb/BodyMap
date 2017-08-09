@@ -8,6 +8,10 @@
 
 <body>
     <img src="anatomy.jpg" style="width:400px;height:500px" id="anatomy" usemap="#mymap">
+    <div>
+        <label for="dBValue"><span id="dBoutput"></span>dB</label>
+        <input type="range" min="0" max="180" step="1" id="dBValue" value="90">
+    </div>
     <map name="mymap">
         <area data-key="head" href="#" shape="poly" coords="195,165,206,202,216,211,225,225,236,229,257,239,285,239,301,228,315,211,325,191,332,176,336,159,335,156,333,154,341,97,328,67,316,57,302,49,298,43,273,36,250,38,227,40,214,50,197,65,191,86" />
         <area data-key="body" href="#" shape="poly" coords="233,230,242,234,250,236,267,237,285,235,291,232,297,246,309,251,322,255,338,265,345,287,344,328,344,347,341,378,340,400,330,425,331,460,333,495,336,514,261,515,216,513,190,511,191,426,181,350,177,289,193,260" />
@@ -17,10 +21,7 @@
         <area data-key="legleft" class="legs" href="#" shape="poly" coords="186,534,260,585,243,744,240,934,247,952,247,965,244,971,208,973,188,969,148,972,144,960,197,935,200,938,185,732" />
         <area data-key="legright" class="legs" href="#" shape="poly" coords="260,584,280,748,279,792,281,857,286,934,276,951,276,959,280,967,290,970,312,971,341,969,369,973,377,964,344,941,321,935,341,733,337,537" />
     </map>
-    <div>
-        <label for="dBValue"><span id="dBoutput"></span>dB</label>
-        <input type="range" min="0" max="180" step="1" id="dBValue" value="90">
-    </div>
+
     <script>
         $('#anatomy').mapster({
             mapKey: 'data-key',
@@ -40,10 +41,10 @@
                 var dBValueCount = $('#dBValue').val();
                 $('#dBoutput').html(dBValueCount.toString());
                 if (dBValueCount > 90) {
-                    $('#head').mapster('set', false);
-                    $('img').mapster('highlight', false)
+                    $('#anatomy').mapster('set', deselected, head);
+                    $('area.legs').mapster('set', false)
                 } else {
-                    $('#head').mapster('set', true);
+                    $('#anatomy').mapster('set', selected, head);
                     $('area.legs').mapster('set', true);
                 }
             });
