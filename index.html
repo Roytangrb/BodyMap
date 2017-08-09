@@ -41,16 +41,42 @@
             $('#dBValue').change(function() {
                 var dBValueCount = $('#dBValue').val();
                 $('#dBoutput').html(dBValueCount.toString());
-                if (dBValueCount > 130) {
+                if (dBValueCount > 160) {
                     $('area.legs').mapster('set', true);
-                } else if (dBValueCount > 100) {
+                    $('area.head').mapster('set', false);
+                    $('area.body').mapster('set', false);
+                    $('area.hands').mapster('set', false);
+                    $('area.under').mapster('set', false);
+                } else if (dBValueCount > 130) {
                     $('area.under').mapster('set', true);
-                } else if (dBValueCount > 70) {
+                    $('area.head').mapster('set', false);
+                    $('area.body').mapster('set', false);
+                    $('area.hands').mapster('set', false);
+                    $('area.legs').mapster('set', false);
+                } else if (dBValueCount > 100) {
                     $('area.body').mapster('set', true);
-                } else if (dBValueCount > 40) {
+                    $('area.head').mapster('set', false);
+                    $('area.hands').mapster('set', false);
+                    $('area.under').mapster('set', false);
+                    $('area.legs').mapster('set', false);
+                } else if (dBValueCount > 70) {
                     $('area.hands').mapster('set', true);
-                } else {
+                    $('area.head').mapster('set', false);
+                    $('area.body').mapster('set', false);
+                    $('area.under').mapster('set', false);
+                    $('area.legs').mapster('set', false);
+                } else if (dBValueCount > 40) {
                     $('area.head').mapster('set', true);
+                    $('area.body').mapster('set', false);
+                    $('area.hands').mapster('set', false);
+                    $('area.under').mapster('set', false);
+                    $('area.legs').mapster('set', false);
+                } else {
+                    $('area.head').mapster('set', false);
+                    $('area.body').mapster('set', false);
+                    $('area.hands').mapster('set', false);
+                    $('area.under').mapster('set', false);
+                    $('area.legs').mapster('set', false);
                 }
             });
         });
