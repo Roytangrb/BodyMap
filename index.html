@@ -6,9 +6,13 @@
 </head>
 
 <body>
-    <img src="anatomy.jpg" style="width:800px;height:1000px" id="anatomy">
+    <img src="anatomy.jpg" style="width:800px;height:1000px" id="anatomy" usemap="#mymap">
+    <map name="mymap">
+         <area data-key="stom" href="#" shape="rect" coords="100,200,200,300" />
+    </map>
     <script>
         $('#anatomy').mapster({
+            mapKey: 'stom',
             fillColor: 'ff0000',
             fillOpacity: 0.3
         });
