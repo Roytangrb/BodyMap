@@ -18,7 +18,7 @@
         <area data-key="legright" class="legs" href="#" shape="poly" coords="260,584,280,748,279,792,281,857,286,934,276,951,276,959,280,967,290,970,312,971,341,969,369,973,377,964,344,941,321,935,341,733,337,537" />
     </map>
     <div>
-        <label for="dBValue">dB</label>
+        <label for="dBValue">dB<span id="dBoutput"></span></label>
         <input type="range" min="0" max="180" step="1" id="dBValue">
     </div>
     <script>
@@ -35,17 +35,18 @@
         $('area.hands').mapster('set', false);
         $('area.legs').mapster('set', false);
 
+        var dBValueCount = $('#dBValue').val();
         $(function() {
             $('#dBValue').change(function() {
-                var dBValueCount = $('#dBValue').val();
                 if (dBValueCount > 90) {
                     $('#head').mapster('set', false);
                     $('img').mapster('highlight', false)
                 } else {
-                    $('#anatomy').mapster('highlight', "head");
+                    $('#head').mapster('set', true);
                     $('area.legs').mapster('set', true);
                 }
             });
         });
+        $('#dBoutput').html(dBValueCount.toString());
     </script>
 </body>
