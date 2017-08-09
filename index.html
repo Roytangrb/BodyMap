@@ -30,7 +30,8 @@
             stroke: true,
             strokeColor: "3320FF",
             strokeOpacity: 0.8,
-            strokeWidth: 4
+            strokeWidth: 4,
+            isDeselectable: true
         });
 
         $('area.hands').mapster('set', false);
@@ -41,15 +42,15 @@
                 var dBValueCount = $('#dBValue').val();
                 $('#dBoutput').html(dBValueCount.toString());
                 if (dBValueCount > 130) {
-                    $('area.head').mapster('set', true);
-                } else if (dBValueCount > 100) {
-                    $('area.body').mapster('set', true);
-                } else if (dBValueCount > 70) {
-                    $('area.hands').mapster('set', true);
-                } else if (dBValueCount > 40) {
-                    $('area.under').mapster('set', true);
-                } else {
                     $('area.legs').mapster('set', true);
+                } else if (dBValueCount > 100) {
+                    $('area.under').mapster('set', true);
+                } else if (dBValueCount > 70) {
+                    $('area.body').mapster('set', true);
+                } else if (dBValueCount > 40) {
+                    $('area.hands').mapster('set', true);
+                } else {
+                    $('area.head').mapster('set', true);
                 }
             });
         });
