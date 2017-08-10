@@ -49,36 +49,48 @@
                     $('#ear1').css('display', 'block');
                     $('#mapster_wrap_0').css('display', 'none');
                 } else if (dBValueCount > 160) {
+                    $('#ear1').css('display', 'none');
+                    $('#mapster_wrap_0').css('display', 'flex');
                     $('area.legs').mapster('set', true);
                     $('area.head').mapster('set', true);
                     $('area.body').mapster('set', true);
                     $('area.hands').mapster('set', true);
                     $('area.under').mapster('set', true);
                 } else if (dBValueCount > 130) {
+                    $('#ear1').css('display', 'none');
+                    $('#mapster_wrap_0').css('display', 'flex');
                     $('area.under').mapster('set', true);
                     $('area.head').mapster('set', true);
                     $('area.body').mapster('set', true);
                     $('area.hands').mapster('set', true);
                     $('area.legs').mapster('set', false);
                 } else if (dBValueCount > 100) {
+                    $('#ear1').css('display', 'none');
+                    $('#mapster_wrap_0').css('display', 'flex');
                     $('area.body').mapster('set', true);
                     $('area.head').mapster('set', true);
                     $('area.hands').mapster('set', true);
                     $('area.under').mapster('set', false);
                     $('area.legs').mapster('set', false);
                 } else if (dBValueCount > 70) {
+                    $('#ear1').css('display', 'none');
+                    $('#mapster_wrap_0').css('display', 'flex');
                     $('area.hands').mapster('set', true);
                     $('area.head').mapster('set', true);
                     $('area.body').mapster('set', false);
                     $('area.under').mapster('set', false);
                     $('area.legs').mapster('set', false);
                 } else if (dBValueCount > 40) {
+                    $('#ear1').css('display', 'none');
+                    $('#mapster_wrap_0').css('display', 'flex');
                     $('area.head').mapster('set', true);
                     $('area.body').mapster('set', false);
                     $('area.hands').mapster('set', false);
                     $('area.under').mapster('set', false);
                     $('area.legs').mapster('set', false);
                 } else {
+                    $('#ear1').css('display', 'none');
+                    $('#mapster_wrap_0').css('display', 'flex');
                     $('area.head').mapster('set', false);
                     $('area.body').mapster('set', false);
                     $('area.hands').mapster('set', false);
