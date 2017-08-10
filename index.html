@@ -1,9 +1,10 @@
-<html>
+<html ng-app>
 
 <head>
     <!--<script src="http://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>-->
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="jquery.imagemapster.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
 </head>
 
 <body>
@@ -12,7 +13,8 @@
 
     <div>
         <label for="dBValue"><span id="dBoutput"></span>dB</label>
-        <input type="range" min="0" max="180" step="1" id="dBValue" value="90">
+        <input type="range" min="0" max="180" step="1" id="dBValue" value="90" ng-model="AngdB">
+        <p>{{AngdB}}</p>
     </div>
     <map name="mymap">
         <area data-key="head" class="head" href="#" shape="poly" coords="227,223,195,214,167,180,160,152,151,149,148,130,154,114,152,75,161,70,160,54,189,28,221,22,246,22,269,30,289,48,301,69,305,109,311,129,308,146,296,147,294,178,279,207,259,217" />
