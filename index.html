@@ -49,8 +49,8 @@
                 var dBValueCount = $('#dBValue').val();
                 $('#dBoutput').html(dBValueCount.toString());
                 if (dBValueCount > 180) {
-                    $('#canvas2').show();
-                    $('#canvas1').hide();
+                    $('#ear1').show();
+                    $('#man1').hide();
                 } else if (dBValueCount > 160) {
                     $('area.legs').mapster('set', true);
                     $('area.head').mapster('set', true);
