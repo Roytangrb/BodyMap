@@ -7,13 +7,12 @@
 </head>
 
 <body>
-    <img src="man1.png" style="width:113px;height:250px" id="man1" usemap="#mymap">
+    <img src="man1.png" style="width:113px;height:250px" id="man1" usemap="#mymap,#mymap2">
     <div>
         <label for="dBValue"><span id="dBoutput"></span>dB</label>
         <input type="range" min="0" max="180" step="1" id="dBValue" value="90">
     </div>
     <map name="mymap">
-        <area data-key="head" class="head" href="#" shape="poly" coords="227,223,195,214,167,180,160,152,151,149,148,130,154,114,152,75,161,70,160,54,189,28,221,22,246,22,269,30,289,48,301,69,305,109,311,129,308,146,296,147,294,178,279,207,259,217" />
         <area data-key="body" class="body" href="#" shape="poly" coords="154,245,147,303,143,336,150,386,158,409,155,496,224,500,297,495,294,414,302,388,307,336,303,246,261,233,255,219,231,222,219,222,201,218,200,215,191,232" />
         <area data-key="handleft" class="hands" href="#" shape="poly" coords="153,247,145,287,144,337,127,398,112,435,114,457,110,484,95,557,97,577,108,588,106,608,103,619,95,606,92,603,90,626,97,641,91,648,75,632,64,591,64,552,74,445,94,307,120,265,137,253" />
         <area data-key="handright" class="hands" href="#" shape="poly" coords="308,249,308,335,339,435,338,448,344,490,361,564,355,573,344,592,344,611,348,620,350,618,354,608,357,599,365,616,357,640,364,647,375,639,386,607,386,560,381,448,352,289,331,267" />
@@ -22,17 +21,35 @@
         <area data-key="legright" class="legs" href="#" shape="poly" coords="228,570,246,725,249,916,239,947,249,959,273,959,301,954,332,957,341,952,333,939,304,925,287,921,301,724,301,521" />
     </map>
 
+    <map name="mymap2">
+        <area data-key2="head" class="head" href="#" shape="poly" coords="227,223,195,214,167,180,160,152,151,149,148,130,154,114,152,75,161,70,160,54,189,28,221,22,246,22,269,30,289,48,301,69,305,109,311,129,308,146,296,147,294,178,279,207,259,217" />
+    </map>
+
     <script>
         $('#man1').mapster({
             mapKey: 'data-key',
-            fillOpacity: 0.4,
-            fillColor: "d42e16",
+            // fillOpacity: 0.4,
+            // fillColor: "d42e16",
             stroke: false,
             // strokeColor: "3320FF",
             // strokeOpacity: 0.8,
             // strokeWidth: 1.5,
             isDeselectable: true,
             altImage: 'man2s.png',
+            altImageStroke: false,
+            altImageOpacity: 1.0
+        });
+
+        $('#man1').mapster({
+            mapKey: 'data-key2',
+            // fillOpacity: 0.4,
+            // fillColor: "d42e16",
+            stroke: false,
+            // strokeColor: "3320FF",
+            // strokeOpacity: 0.8,
+            // strokeWidth: 1.5,
+            isDeselectable: true,
+            altImage: 'man3s.png',
             altImageStroke: false,
             altImageOpacity: 1.0
         });
