@@ -12,9 +12,9 @@
     <img src="ear1.png" style="width:113px;height:250px; display:none" id="ear1">
 
     <div>
-        <label for="dBValue"><span id="dBoutput"></span>dB</label>
+        <label for="dBValue">{{AngdB}}dB</label>
         <input type="range" min="0" max="180" step="1" id="dBValue" value="90" ng-model="AngdB">
-        <p>{{AngdB}}</p>
+
     </div>
     <map name="mymap">
         <area data-key="head" class="head" href="#" shape="poly" coords="227,223,195,214,167,180,160,152,151,149,148,130,154,114,152,75,161,70,160,54,189,28,221,22,246,22,269,30,289,48,301,69,305,109,311,129,308,146,296,147,294,178,279,207,259,217" />
@@ -44,7 +44,7 @@
         $(function() {
             $('#dBValue').change(function() {
                 var dBValueCount = $('#dBValue').val();
-                $('#dBoutput').html(dBValueCount.toString());
+
                 if (dBValueCount > 180) {
                     $('#ear1').css('display', 'block');
                     $('#man1').css('display', 'none');
