@@ -19,8 +19,8 @@
         <script src="angular.js"></script>
 
         <div ng-controller="dBcontroller">
-            <label for="dBValue">{{dB}}dB</label>
-            <input type="range" min="0" max="180" step="1" id="dBValue" value="0" ng-model="AngdB" ng-change="dBchange">
+            <label for="dBValue">{{AngdB}}dB</label>
+            <input type="range" min="0" max="180" step="1" id="dBValue" value="0" ng-model="AngdB">
         </div>
         <img src="rural night.jpg" style="width:113px;height:50px; display: block">
         <img src="rural resident.jpg" style="width:113px;height:50px; display:none">
@@ -30,14 +30,17 @@
         <script>
             var dBexampleApp = angular.module('dBexampleApp', []);
 
-            dBexampleApp.controller('dBcontroller', ['$scope', function($scope) {
-                $scope.dBchange = function() {
-                    $scope.dB = $scope;
-                    if ($scope.dB > 90) {
-                        console.log($scope.dB);
-                    }
-                }
-            }]);
+            dBexampleApp.controller('dBcontroller', function($scope) {
+                $scope.AngdB = $scope;
+            });
+            // dBexampleApp.controller('dBcontroller', ['$scope', function($scope) {
+            //     $scope.dBchange = function() {
+            //         $scope.dB = $scope;
+            //         if ($scope.dB > 90) {
+            //             console.log($scope.dB);
+            //         }
+            //     }
+            // }]);
         </script>
     </div>
 
