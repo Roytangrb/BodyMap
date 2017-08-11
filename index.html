@@ -4,7 +4,6 @@
     <!--<script src="http://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>-->
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="jquery.imagemapster.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
 </head>
 
 <body>
@@ -14,6 +13,27 @@
     <div>
         <label for="dBValue">{{AngdB}}dB</label>
         <input type="range" min="0" max="180" step="1" id="dBValue" value="0" ng-model="AngdB">
+    </div>
+
+    <div ng-app="dBexampleApp">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+
+        <div ng-controller="dBcontroller">
+            <label for="dBValue">{{AngdB}}dB</label>
+            <input type="range" min="0" max="180" step="1" id="dBValue" value="0" ng-model="AngdB" ng-change="dBchange">
+        </div>
+
+        <script>
+            var dBexampleApp = angular.module('dBexampleApp', []);
+
+            dBexampleApp.controller('dBcontroller', ['$scope', function($scope)] {
+                $scope.dBchange = function() {
+                    if ($scope.AngdB > 90) {
+                        console.log($scope.AngdB);
+                    }
+                };
+            });
+        </script>
     </div>
 
     <map name="mymap">
