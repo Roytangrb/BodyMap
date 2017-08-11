@@ -31,11 +31,11 @@
             var dBexampleApp = angular.module('dBexampleApp', []);
 
             dBexampleApp.controller('dBcontroller', ['$scope', function($scope) {
-                $scope.dBchange = function() {
-                    if ($scope.AngdB > 90) {
-                        console.log($scope.AngdB);
-                    }
+                // $scope.dBchange = function() {
+                if ($scope.AngdB > 90) {
+                    console.log($scope.AngdB);
                 }
+                // }
             }]);
         </script>
     </div>
