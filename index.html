@@ -1,4 +1,4 @@
-<html ng-app>
+<html>
 
 <head>
     <!--<script src="http://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>-->
@@ -11,7 +11,7 @@
     <img src="man1.png" style="width:113px;height:250px; display:flex" id="man1" usemap="#mymap">
     <img src="ear1.png" style="width:113px;height:250px; display:none" id="ear1">
 
-    <div>
+    <div ng-app>
         <label for="dBValue1">{{AngdB1}}dB</label>
         <input type="range" min="0" max="180" step="1" id="dBValue1" value="0" ng-model="AngdB1">
     </div>
