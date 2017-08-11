@@ -19,7 +19,7 @@
     <div ng-app="dBexampleApp">
 
         <div ng-controller="dBcontroller">
-            <label for="dBValue">{{AngdB}}dB</label>
+            <label for="dBValue">{{AngdB}}<span>dB</span></label>
             <input type="range" min="0" max="180" step="1" id="dBValue" value="0" ng-model="AngdB" ng-change="dBchange()">
         </div>
         <img src="rural night.jpg" style="width:113px;height:50px; display: block">
@@ -33,6 +33,7 @@
             dBexampleApp.controller('dBcontroller', function($scope) {
                 $scope.dBchange = function() {
                     // if ($scope.AngdB > 90) {
+                    $scope.AngdB = 0;
                     console.log($scope.AngdB);
                     // }
                 }
