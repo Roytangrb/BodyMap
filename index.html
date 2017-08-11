@@ -4,6 +4,7 @@
     <!--<script src="http://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>-->
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="jquery.imagemapster.js"></script>
+    <script src="angular.js"></script>
 </head>
 
 <body>
@@ -16,11 +17,10 @@
     </div>
 
     <div ng-app="dBexampleApp">
-        <script src="angular.js"></script>
 
         <div ng-controller="dBcontroller">
             <label for="dBValue">{{AngdB}}dB</label>
-            <input type="range" min="0" max="180" step="1" id="dBValue" value="0" ng-model="AngdB" ng-change="dBchange">
+            <input type="range" min="0" max="180" step="1" id="dBValue" value="0" ng-model="AngdB" ng-change="dBchange()">
         </div>
         <img src="rural night.jpg" style="width:113px;height:50px; display: block">
         <img src="rural resident.jpg" style="width:113px;height:50px; display:none">
@@ -30,14 +30,14 @@
         <script>
             var dBexampleApp = angular.module('dBexampleApp', []);
 
-            dBexampleApp.controller('dBcontroller', ['$scope', function($scope) {
+            dBexampleApp.controller('dBcontroller', function($scope) {
                 $scope.dBchange = function() {
                     $scope.dB = $scope;
-                    if ($scope.AngdB > 90) {
-                        console.log($scope.AngdB);
+                    if ($scope.dB > 90) {
+                        console.log($scope.dB);
                     }
                 }
-            }]);
+            });
         </script>
     </div>
 
