@@ -11,8 +11,8 @@
     <img src="ear1.png" style="width:113px;height:250px; display:none" id="ear1">
 
     <div>
-        <label for="dBValue">{{AngdB}}dB</label>
-        <input type="range" min="0" max="180" step="1" id="dBValue" value="0" ng-model="AngdB">
+        <label for="dBValue1">{{AngdB1}}dB</label>
+        <input type="range" min="0" max="180" step="1" id="dBValue1" value="0" ng-model="AngdB1">
     </div>
 
     <div ng-app="dBexampleApp">
@@ -63,7 +63,7 @@
 
         $(function() {
             $('#dBValue').change(function() {
-                var dBValueCount = $('#dBValue').val();
+                var dBValueCount = $('#dBValue1').val();
 
                 if (dBValueCount > 170) {
                     $('#ear1').css('display', 'block');
