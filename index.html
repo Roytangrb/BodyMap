@@ -5,54 +5,54 @@
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="jquery.imagemapster.js"></script>
     <script src="angular.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/57qxYUwptc8?autoplay=1&loop=1&controls=0" frameborder="0" style="width:100%;height:75%"></iframe>
+    <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/57qxYUwptc8?autoplay=1&loop=1&controls=0" frameborder="0" style="width:100%;height:75%"></iframe>-->
+    <div class="container">
+        <div ng-app="dBexampleApp">
 
-    <!--
-    <div ng-app="dBexampleApp1">
-        <div ng-controller="dBcontroller1">
-            <label for="dBValue1">{{AngdB1}}dB</label>
-            <input type="range" ng-change="dBchange1()" min="0" max="180" step="1" id="dBValue1" value="0" ng-model="AngdB1">
-        </div>
-        <script>
-            var dBexampleApp1 = angular.module('dBexampleApp1', []).module('dBcontroller', function($scope) {
-                $scope.AngdB1 = 0;
-                $scope.getAngdB1 = function() {
-                    return $scope.AngdB1;
-                };
-                $scope.dBchange1 = function() {
-                    $scope.AngdB1 = parseInt($scope.AngdB1)
-                }
-            });
-        </script>
-    </div>-->
+            <div ng-controller="dBcontroller">
+                <div class="row">
+                    <img src="man1.png" style="width:225px;height:500px; display:block" id="man1" ng-if="getAngdB() >= 0 && getAngdB() < 70">
+                    <!--usemap="#myMap"-->
+                    <img src="man2.png" style="width:225px;height:500px; display:block" id="man2" ng-if="getAngdB() >= 70 && getAngdB() < 90">
+                    <img src="man3.png" style="width:225px;height:500px; display:block" id="man3" ng-if="getAngdB() >= 90 && getAngdB() < 110">
+                    <img src="EMG1.png" style="width:225px;height:500px; display:block" id="EMG1" ng-if="getAngdB() >= 110 && getAngdB() < 120">
+                    <img src="ear1.png" style="width:225px;height:500px; display:block" id="ear1" ng-if="getAngdB() >= 120 && getAngdB() < 140">
+                    <img src="ear2.png" style="width:225px;height:500px; display:block" id="ear2" ng-if="getAngdB() >= 140 && getAngdB() < 181">
+                </div>
+                <div class="row">
+                    <h1 style="font-size:50px;display:inline-block; overflow:hidden; background-color:white; padding-bottom:12.5px; padding-top:2.5px;" ng-if="getAngdB() >= 0 && getAngdB() < 20">Infrasound</h1>
+                    <img src="rural night.jpg" style="width:225px;height:100px;" ng-if="getAngdB() >= 20 && getAngdB() < 40">
+                    <img src="rural resident.jpg" style="width:225px;height:100px; " ng-if="getAngdB() >= 40 && getAngdB() < 50">
+                    <img src="quiet office.jpg" style="width:225px;height:100px; " ng-if="getAngdB() >= 50 && getAngdB() < 60">
+                    <img src="people talking.jpg" style="width:225px;height:100px;" ng-if="getAngdB() >= 60 && getAngdB() < 70">
+                    <img src="phone ringing.gif" style="width:225px;height:100px;" ng-if="getAngdB() >= 70 && getAngdB() < 80">
+                    <img src="dog barking.jpg" style="width:225px;height:100px;" ng-if="getAngdB() >= 80 && getAngdB() < 90">
+                    <img src="bus on the road.jpg" style="width:225px;height:100px;" ng-if="getAngdB() >= 90 && getAngdB() < 100">
+                    <img src="train arrvial.jpg" style="width:225px;height:100px;" ng-if="getAngdB() >= 100 && getAngdB() < 110">
+                    <img src="karaoke.jpg" style="width:225px;height:100px;" ng-if="getAngdB() >= 110 && getAngdB() < 120">
+                    <img src="crusher.jpg" style="width:225px;height:100px;" ng-if="getAngdB() >= 120 && getAngdB() < 130">
+                    <img src="plane taking off.jpg" style="width:225px;height:100px;" ng-if="getAngdB() >= 130 && getAngdB() <= 140">
+                    <b style="font-size:28px; display:block; background-color:white; padding-bottom:20px; padding-top:10px;" ng-if="getAngdB() >140 && getAngdB() < 181">Eardrum Repture</b>
+                </div>
 
-    <div ng-app="dBexampleApp">
-
-        <div ng-controller="dBcontroller">
-            <img src="man1.png" style="width:113px;height:250px; display:flex" id="man1" usemap="#mymap">
-            <div style="display:flex">
-                <img src="ear1.png" style="width:113px;height:250px; display:none" id="ear1">
-                <img src="rural night.jpg" style="width:113px;height:50px; " ng-if="getAngdB() >= 0 && getAngdB() < 40">
-                <img src="rural resident.jpg" style="width:113px;height:50px; " ng-if="getAngdB() >= 40 && getAngdB() < 50">
-                <img src="quiet office.jpg" style="width:113px;height:50px; " ng-if="getAngdB() >= 50 && getAngdB() < 60">
-                <img src="people talking.jpg" style="width:113px;height:50px;" ng-if="getAngdB() >= 60 && getAngdB() < 70">
-                <img src="phone ringing.gif" style="width:113px;height:50px;" ng-if="getAngdB() >= 70 && getAngdB() < 80">
-                <img src="dog barking.jpg" style="width:113px;height:50px;" ng-if="getAngdB() >= 80 && getAngdB() < 90">
-                <img src="bus on the road.jpg" style="width:113px;height:50px;" ng-if="getAngdB() >= 90 && getAngdB() < 100">
-                <img src="train arrvial.jpg" style="width:113px;height:50px;" ng-if="getAngdB() >= 100 && getAngdB() < 110">
-                <img src="karaoke.jpg" style="width:113px;height:50px;" ng-if="getAngdB() >= 110 && getAngdB() < 120">
-                <img src="crusher.jpg" style="width:113px;height:50px;" ng-if="getAngdB() >= 120 && getAngdB() < 130">
-                <img src="plane taking off.jpg" style="width:113px;height:50px;" ng-if="getAngdB() >= 130 && getAngdB() < 181">
-
+                <div class="row">
+                    <label for="dBValue" style="font-size:30px">{{AngdB}}dB</label>
+                    <input type="range" ng-change="dBchange()" min="0" max="180" step="1" id="dBValue" value="{{getAngdB()}}" ng-model="AngdB" style="width:225px">
+                </div>
             </div>
-            <label for="dBValue">{{AngdB}}dB</label>
-            <input type="range" ng-change="dBchange()" min="0" max="180" step="1" id="dBValue" value="{{getAngdB()}}" ng-model="AngdB">
-
         </div>
-
         <script>
             var dBexampleApp = angular.module('dBexampleApp', []).controller('dBcontroller', function($scope) {
                 $scope.AngdB = 0;
@@ -68,7 +68,7 @@
 
     </div>
 
-    <map name="mymap">
+    <!--<map name="mymap">
         <area data-key="head" class="head" href="#" shape="poly" coords="227,223,195,214,167,180,160,152,151,149,148,130,154,114,152,75,161,70,160,54,189,28,221,22,246,22,269,30,289,48,301,69,305,109,311,129,308,146,296,147,294,178,279,207,259,217" />
         <area data-key="body" class="body" href="#" shape="poly" coords="154,245,147,303,143,336,150,386,158,409,155,496,224,500,297,495,294,414,302,388,307,336,303,246,261,233,255,219,231,222,219,222,201,218,200,215,191,232" />
         <area data-key="handleft" class="hands" href="#" shape="poly" coords="153,247,145,287,144,337,127,398,112,435,114,457,110,484,95,557,97,577,108,588,106,608,103,619,95,606,92,603,90,626,97,641,91,648,75,632,64,591,64,552,74,445,94,307,120,265,137,253" />
@@ -76,85 +76,17 @@
         <area data-key="under" class="under" href="#" shape="poly" coords="155,498,299,496,299,522,227,570,153,519" />
         <area data-key="legleft" class="legs" href="#" shape="poly" coords="151,519,148,716,165,920,134,934,113,942,110,951,121,958,142,958,159,958,185,960,207,954,211,936,204,918,211,735,228,570" />
         <area data-key="legright" class="legs" href="#" shape="poly" coords="228,570,246,725,249,916,239,947,249,959,273,959,301,954,332,957,341,952,333,939,304,925,287,921,301,724,301,521" />
-    </map>
+    </map>-->
 
-    <script>
+    <!--<script>
         $('#man1').mapster({
             mapKey: 'data-key',
-            // fillOpacity: 0.4,
-            // fillColor: "d42e16",
             stroke: false,
-            // strokeColor: "3320FF",
-            // strokeOpacity: 0.8,
-            // strokeWidth: 1.5,
             isDeselectable: true,
             altImage: 'man2s.png',
             altImageStroke: false,
             altImageOpacity: 1.0
         });
-    </script>
-
-    <script>
-        $(function() {
-            $('#dBValue').change(function() {
-
-                var dBValueCount = $('#dBValue').val();
-
-
-                if (dBValueCount > 170) {
-                    $('#ear1').css('display', 'block');
-                    $('#mapster_wrap_0').css('display', 'none');
-                } else if (dBValueCount > 160) {
-                    $('#ear1').css('display', 'none');
-                    $('#mapster_wrap_0').css('display', 'flex');
-                    $('area.legs').mapster('set', true);
-                    $('area.head').mapster('set', true);
-                    $('area.body').mapster('set', true);
-                    $('area.hands').mapster('set', true);
-                    $('area.under').mapster('set', true);
-                } else if (dBValueCount > 130) {
-                    $('#ear1').css('display', 'none');
-                    $('#mapster_wrap_0').css('display', 'flex');
-                    $('area.under').mapster('set', true);
-                    $('area.head').mapster('set', true);
-                    $('area.body').mapster('set', true);
-                    $('area.hands').mapster('set', true);
-                    $('area.legs').mapster('set', false);
-                } else if (dBValueCount > 100) {
-                    $('#ear1').css('display', 'none');
-                    $('#mapster_wrap_0').css('display', 'flex');
-                    $('area.body').mapster('set', true);
-                    $('area.head').mapster('set', true);
-                    $('area.hands').mapster('set', true);
-                    $('area.under').mapster('set', false);
-                    $('area.legs').mapster('set', false);
-                } else if (dBValueCount > 70) {
-                    $('#ear1').css('display', 'none');
-                    $('#mapster_wrap_0').css('display', 'flex');
-                    $('area.hands').mapster('set', true);
-                    $('area.head').mapster('set', true);
-                    $('area.body').mapster('set', false);
-                    $('area.under').mapster('set', false);
-                    $('area.legs').mapster('set', false);
-                } else if (dBValueCount > 40) {
-                    $('#ear1').css('display', 'none');
-                    $('#mapster_wrap_0').css('display', 'flex');
-                    $('area.head').mapster('set', true);
-                    $('area.body').mapster('set', false);
-                    $('area.hands').mapster('set', false);
-                    $('area.under').mapster('set', false);
-                    $('area.legs').mapster('set', false);
-                } else {
-                    $('#ear1').css('display', 'none');
-                    $('#mapster_wrap_0').css('display', 'flex');
-                    $('area.head').mapster('set', false);
-                    $('area.body').mapster('set', false);
-                    $('area.hands').mapster('set', false);
-                    $('area.under').mapster('set', false);
-                    $('area.legs').mapster('set', false);
-                }
-            });
-        });
-    </script>
+    </script>-->
 
 </body>
