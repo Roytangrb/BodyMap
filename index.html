@@ -8,38 +8,62 @@
 </head>
 
 <body>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/57qxYUwptc8?autoplay=1&loop=1&controls=0" frameborder="0" style="width:100%;padding-bottom:56.25%"></iframe>
-    <img src="man1.png" style="width:113px;height:250px; display:flex" id="man1" usemap="#mymap">
-    <img src="ear1.png" style="width:113px;height:250px; display:none" id="ear1">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/57qxYUwptc8?autoplay=1&loop=1&controls=0" frameborder="0" style="width:100%;height:75%"></iframe>
 
-    <div ng-app>
-        <label for="dBValue1">{{AngdB1}}dB</label>
-        <input type="range" min="0" max="180" step="1" id="dBValue1" value="0" ng-model="AngdB1">
-    </div>
+    <!--
+    <div ng-app="dBexampleApp1">
+        <div ng-controller="dBcontroller1">
+            <label for="dBValue1">{{AngdB1}}dB</label>
+            <input type="range" ng-change="dBchange1()" min="0" max="180" step="1" id="dBValue1" value="0" ng-model="AngdB1">
+        </div>
+        <script>
+            var dBexampleApp1 = angular.module('dBexampleApp1', []).module('dBcontroller', function($scope) {
+                $scope.AngdB1 = 0;
+                $scope.getAngdB1 = function() {
+                    return $scope.AngdB1;
+                };
+                $scope.dBchange1 = function() {
+                    $scope.AngdB1 = parseInt($scope.AngdB1)
+                }
+            });
+        </script>
+    </div>-->
 
     <div ng-app="dBexampleApp">
 
         <div ng-controller="dBcontroller">
-            <label for="dBValue">{{AngdB}}<span>dB</span></label>
-            <input type="range" min="0" max="180" id="dBValue" ng-model="AngdB" ng-change="dBchange()">
+            <img src="man1.png" style="width:113px;height:250px; display:flex" id="man1" usemap="#mymap">
+            <div style="display:flex">
+                <img src="ear1.png" style="width:113px;height:250px; display:none" id="ear1">
+                <img src="rural night.jpg" style="width:113px;height:50px; " ng-if="getAngdB() >= 0 && getAngdB() < 40">
+                <img src="rural resident.jpg" style="width:113px;height:50px; " ng-if="getAngdB() >= 40 && getAngdB() < 50">
+                <img src="quiet office.jpg" style="width:113px;height:50px; " ng-if="getAngdB() >= 50 && getAngdB() < 60">
+                <img src="people talking.jpg" style="width:113px;height:50px;" ng-if="getAngdB() >= 60 && getAngdB() < 70">
+                <img src="phone ringing.gif" style="width:113px;height:50px;" ng-if="getAngdB() >= 70 && getAngdB() < 80">
+                <img src="dog barking.jpg" style="width:113px;height:50px;" ng-if="getAngdB() >= 80 && getAngdB() < 90">
+                <img src="bus on the road.jpg" style="width:113px;height:50px;" ng-if="getAngdB() >= 90 && getAngdB() < 100">
+                <img src="train arrival.jpg" style="width:113px;height:50px;" ng-if="getAngdB() >= 100 && getAngdB() < 110">
+                <img src="karaoke.jpg" style="width:113px;height:50px;" ng-if="getAngdB() >= 110 && getAngdB() < 120">
+
+            </div>
+            <label for="dBValue">{{AngdB}}dB</label>
+            <input type="range" ng-change="dBchange()" min="0" max="180" step="1" id="dBValue" value="{{getAngdB()}}" ng-model="AngdB">
+
         </div>
-        <img src="rural night.jpg" style="width:113px;height:50px; display: block">
-        <img src="rural resident.jpg" style="width:113px;height:50px; display:none">
-        <img src="quiet office.jpg" style="width:113px;height:50px; display:none">
-        <img src="people talking.jpg" style="width:113px;height:50px; display:none">
 
         <script>
-            var dBexampleApp = angular.module('dBexampleApp', []);
-
-            dBexampleApp.controller('dBcontroller', ['$scope', function($scope) {
+            var dBexampleApp = angular.module('dBexampleApp', []).controller('dBcontroller', function($scope) {
                 $scope.AngdB = 0;
+
+                $scope.getAngdB = function() {
+                    return $scope.AngdB;
+                };
                 $scope.dBchange = function() {
-                    if ($scope.AngdB > 90) {
-                        console.log($scope.AngdB);
-                    }
+                    $scope.AngdB = parseInt($scope.AngdB);
                 }
-            }]);
+            });
         </script>
+
     </div>
 
     <map name="mymap">
@@ -66,10 +90,14 @@
             altImageStroke: false,
             altImageOpacity: 1.0
         });
+    </script>
 
+    <script>
         $(function() {
-            $('#dBValue1').change(function() {
-                var dBValueCount = $('#dBValue1').val();
+            $('#dBValue').change(function() {
+
+                var dBValueCount = $('#dBValue').val();
+
 
                 if (dBValueCount > 170) {
                     $('#ear1').css('display', 'block');
