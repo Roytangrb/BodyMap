@@ -108,8 +108,8 @@
     </style>
 </head>
 
-<body>
-    <div class="loader">
+<body id="myDiv">
+    <div id="loader">
         <h1>Loading......</h1>
         <div id="bars">
             <div class="bar"></div>
@@ -213,11 +213,24 @@
         </script>
 
     </div>
-
+    <!-- 
     <script language="javascript" type="text/javascript">
         $(window).load(function() {
             $('.loader').hide();
         });
-    </script>
+    </script> -->
 
+
+    <script>
+        var myVar;
+
+        function myFunction() {
+            myVar = setTimeout(showPage, 3000);
+        }
+
+        function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("myDiv").style.display = "block";
+        }
+    </script>
 </body>
